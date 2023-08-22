@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: Jene2eapp-k8s
-          image: siva2428/e2eje # Image that will be used to containers in the cluster
+          image: siva2428/e2eapps # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8011 # The port that the container is running on in the cluster
