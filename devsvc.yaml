@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
-  name: Jene2e-deploy
+  name: jene2e-deploy
 spec:
   selector:
     matchLabels:
-      app: Jene2e-deploy
+      app: jene2e-deploy
   replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
-        app: Jene2e-deploy
+        app: jene2e-deploy
     spec:
       containers:
-        - name: Jene2eapp-k8s
+        - name: jene2e-k8s
           image: siva2428/e2eapps # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: Jene2e-svc
+  name: jene2e-svc
 spec:
   selector:
-    app: Jene2e-deploy
+    app: jene2e-deploy
   ports:
     - protocol: "TCP"
       port: 8011 # The port that the service is running on in the cluster
